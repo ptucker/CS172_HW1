@@ -1,0 +1,276 @@
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+#include <cmath>
+#include <string>
+using namespace std;
+
+void ex02(){
+    // A
+    bool hasPassedTest = true;
+    // B
+    srand(time(0));
+    int x = rand() % 10;
+    int y = rand() % 10;
+    
+    if(x >= y){
+        cout << "x is great than y: "<< x << endl;
+        if (x == y)
+            cout << "x and y are equal: " << x << " " << y << endl;
+    }
+    else
+        cout << "x is smaller than y" << endl;
+    
+    // C
+    int numberOfShares;
+    
+    cout << "Please Enter a number: ";
+        cin >> numberOfShares;
+    cout << endl;
+    
+    if (numberOfShares <= 100)
+        cout << "The number you've entered is less than 100." << endl;
+    else
+        cout << "The number you've entered is greater than 100." << endl;
+    
+    // D
+    int boxWidth, bookWidth, temp;
+    cout << "Please enter a box width and book width." << endl;
+    cout << "Box Width: ";
+        cin >> boxWidth;
+    cout << "Book Width: ";
+        cin >> bookWidth;
+        
+    if (boxWidth % bookWidth == 0){
+        temp = boxWidth / bookWidth;
+        cout << "You can fit " << temp << " books evenly in your box." << endl;
+    }else{
+        cout << "You cant evenly fit your books in your box." << endl;
+    }
+    // E
+    int shelfLife, outSideTemp;
+    cout << "Please enter the shelf life of your box of chocolate." << endl;
+    cout << "Shelf Life: ";
+        cin >> shelfLife;
+    cout << "Please enter the outside temperautre." << endl;
+    cout << "Outside Temperature: ";
+        cin >> outSideTemp;
+    cout << endl;
+
+    if (outSideTemp < 90){
+        cout << "Your shelf life of your box of chocolate will not be impacted by the ";
+        cout << "outside temperautre." << endl;
+    }else{
+        shelfLife -= 4;
+        cout << "Its hot, youre shelf life is going to be impacted by the outside ";
+        cout << "temperautre. Your self life is " << shelfLife << endl;
+    }
+    
+}
+
+void ex03(){
+    // A
+    double area, length, width, diagonal, temp;
+
+    cout << "Please an area of a square." << endl;
+    cout << "Area: ";
+    cin >> area;
+
+        length = area / 2;
+        width = length;
+        temp = pow(length, 2) + pow(width, 2);
+        diagonal = sqrt(temp);
+
+    cout << "With an area of " << area << " the diagonal of the square is " << diagonal << endl; // open to see left over code for RECTANGLE!!!!
+        /* trying something out (left over code, use the "EsIf" for rectangle)
+        if(length == width)
+        {
+            area = length * width;
+            diagonal = (sqrt(length) + sqrt(width));
+            cout << "The diagonal of your square is: " << diagonal << endl;
+        }
+        else if (length != width)
+        {
+            area = length * width;
+            diagonal = (sqrt(length) + sqrt(width));
+            cout << "The diagonal of your rectangle is: " << diagonal << endl;
+        }
+         /*/
+    
+    
+    
+    
+    
+    
+    // B
+    string y = "Yes", n = "No";
+    char user;
+
+    cout << "Please and Yes or No (y or n) if you like apples." << endl;
+    cin >> user;
+
+    if ((user == 'y') || (user == 'Y'))
+    {
+        cout << y << " you do like apples!" << endl;
+    }
+    else if ((user == 'n') || (user == 'N'))
+    {
+        cout << n << " you do like apples!" << endl;
+    }
+    else
+        cout << "You didnt enter yes or no." << endl;
+    
+    // C
+    char tab = '\t';
+    int numOfTab;
+
+    cout << "Please enter a number for how many tabs you would like." << endl;
+    cout << "Number of Tabs: ";
+    cin >> numOfTab;
+
+        for (int i = numOfTab; i > 0; i--)
+        {
+            cout << tab << i;
+        }
+        cout << " Im Over Here!" << endl;
+
+
+    // D
+    cin.get(); // use to consume the new line
+    cout << "What is your address please: ";
+    string addy;
+    getline (cin, addy);
+    cout << "the package will be sent to: " << addy << " ." << endl;
+
+    // E
+    cin.get();
+    string noting = "       ";
+
+}
+
+int dub(int a)
+{
+    int x = a * 2;
+    return x;
+}
+
+int add(int a, int b)
+{
+    int x = a + b;
+}
+void ex04(){
+    // A
+    int userNum, tempB, tempC;
+
+    cout << "Please enter a number between 1 and 10." << endl;
+    
+    while (userNum <= 10)
+    {
+        cout << "Number: ";
+        cin >> userNum;
+        cout << "your number is: " << userNum;
+    }
+        cout << endl;
+
+    // B
+    cout << "the cube sum of your number is: ";
+    for (int i = 0; i <= userNum; i++)
+    {
+        tempB = pow(i, 3);
+        cout << userNum << " ";
+    }
+        cout << endl;
+    
+    // C
+    tempC = userNum;
+    do{
+        cout << "* ";
+        tempC--;
+    }while (tempC >= 0);
+
+    // D
+    for (int i = 0; i <= 40; i++)
+    {
+        if (i % 2 == 0)
+        {
+            cout << i << " ";
+        }
+    }
+        cout << endl;
+    // E
+    cout << "your number is: " << dub(userNum) << endl;
+
+    // F
+    int i = rand() % 100;
+    int j = rand() % 100;
+
+    cout << " the sum of two random integers: " << add(i, j) << endl;
+
+    // G
+}
+void printArray(int list[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        cout << list[i] << " ";
+    }
+    //cout << endl;
+}
+void ex05(){
+    // A
+    int aryAdd[5];
+    cout << "Please enter 5 integer" << endl;
+    for (int i = 0; i < 5; i++)
+    {
+        cout << "number: ";
+        cin >> aryAdd[i];
+    }
+
+    int tempArry[5];
+
+    for (int i = 0; i < 5; i++)
+    {
+        tempArry[i] = aryAdd[i];
+    }
+
+    // B
+    int sum, pro = 1;
+    for (int i = 0; i < 5; i++)
+    {
+        sum += aryAdd[i];
+        pro *= aryAdd[i];
+    }
+    cout << "Sum of integers is: " << sum << endl;
+    cout << "Product of integers is: " << pro << endl;
+
+    // C
+    int ARRAY_SIZE = 5;
+    cout << "The values of the array are: ";
+    printArray(aryAdd, 5);
+
+    // D
+    int guess;
+    cout << " lets play a game, guess the numbers in the numbers in the array." << endl;
+    
+    for (int i = 0; i < ARRAY_SIZE; i++)
+    {
+        cout << "guess a number: ";
+        cin >> guess;
+
+            if (guess == aryAdd[i])
+            {
+                cout << "Correct Guess, " << guess << " is one of the number" << endl;
+            }
+            else
+            {
+                cout << "Sorry " << guess << " is not one of the numbers" << endl;
+            } 
+
+    }
+}
+int main(){
+    //ex02();
+    //ex03();
+    //ex04();
+    //ex05();
+}
